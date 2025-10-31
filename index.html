@@ -8,166 +8,165 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
             color: #2d2d2d;
             background-color: #fafafa;
         }
-        
+
         .minimal-shadow {
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
         }
-        
+
         .gentle-hover {
             transition: all 0.3s ease;
         }
-        
+
         .gentle-hover:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
         }
 
-        /* Зум для фотографий интерьера */
-        .gallery-image-wrapper { /* Новый класс для контейнера картинки */
-            overflow: hidden; /* Обрезаем все, что выходит за границы при зуме */
-            display: block; /* Делаем ссылку блочным элементом */
+        .gallery-image-wrapper {
+            overflow: hidden;
+            display: block;
         }
+
         .gallery-image-wrapper img {
-            transition: transform 0.3s ease; /* Плавный переход для самого изображения */
+            transition: transform 0.3s ease;
         }
+
         .gallery-image-wrapper:hover img {
-            transform: scale(1.1); /* Увеличение изображения при наведении */
+            transform: scale(1.1);
         }
-        
+
         .text-primary {
             color: #2d2d2d;
         }
-        
+
         .text-secondary {
             color: #6b7280;
         }
-        
+
         .border-subtle {
             border-color: #e8e8e8;
         }
-        
+
         .accent-color {
             color: #8b7355;
         }
-        
+
         .accent-bg {
             background-color: #8b7355 !important;
         }
-        
+
         .btn-3d {
             background-color: #8b7355 !important;
             color: #ffffff !important;
         }
-        
+
         .btn-3d svg {
             color: #ffffff !important;
         }
-        
+
         .btn-3d span {
             color: #ffffff !important;
         }
-        
-        .property-image {
-            background: linear-gradient(135deg, #f5f3f0 0%, #e8e5e0 100%);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
 
-        /* Стиль для списков в описании */
         .description-list {
-            list-style: none; /* Убираем стандартные маркеры */
-            padding-left: 0.5rem; /* Небольшой отступ */
-            margin-bottom: 1.5rem; /* mb-6 */
-        }
-        .description-list li {
-            margin-bottom: 0.75rem; /* Отступ между элементами списка */
-            color: #6b7280; /* text-secondary */
-            font-weight: 300; /* font-light */
-        }
-        /* --- УБРАНА ГАЛОЧКА (li::before) --- */
-        
-        .description-list li strong {
-            font-weight: 500; /* Более легкое выделение */
+            list-style: none;
+            padding-left: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Стили для кастомизации Lightbox (по желанию) */
-        .lb-data .lb-caption {
-            font-size: 1rem;
+        .description-list li {
+            margin-bottom: 0.75rem;
+            color: #6b7280;
             font-weight: 300;
         }
-        .lb-data .lb-number {
-            font-size: 0.9rem;
-            font-weight: 300;
+
+        .description-list li strong {
+            font-weight: 500;
         }
-        
-        /* Стили для iframe карты, чтобы он правильно вписался */
+
         .map-container iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
+
+        /* Пульсирующая анимация для финальной кнопки */
+        @keyframes pulse-green {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+            }
+        }
+
+        .pulse-button {
+            animation: pulse-green 2s infinite;
+        }
+
+        /* Бейдж "Новинка" */
+        .badge-new {
+            display: inline-block;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
-    
+
     <div class="min-h-screen py-6 md:py-16">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            
-            <div class="bg-white rounded-3xl minimal-shadow overflow-hidden mb-12">
-                
+
+            <div class="bg-white rounded-3xl minimal-shadow overflow-hidden mb-8">
+
                 <div class="h-64 sm:h-80 md:h-96 w-full overflow-hidden bg-gray-200">
-                    <video 
-                        class="w-full h-full object-cover" 
-                        src="https://res.cloudinary.com/dxkuidd6d/video/upload/v1761135088/grok-video-f96da3c9-232f-4076-89f9-fe087ad98828_grlmic.mp4" 
-                        autoplay 
-                        loop 
-                        muted 
-                        playsinline>
-                        Your browser does not support the video tag.
+                    <video
+                        class="w-full h-full object-cover"
+                        src="https://res.cloudinary.com/dxkuidd6d/video/upload/v1761135088/grok-video-f96da3c9-232f-4076-89f9-fe087ad98828_grlmic.mp4"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                    >
                     </video>
                 </div>
-                
+
                 <div class="p-6 md:p-12">
-                    
-                    <div class="mb-12">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-                            
-                            <a href="project.pdf" target="_blank" download
-                               class="gentle-hover bg-white border-2 border-subtle text-primary py-3 md:py-4 px-4 md:px-8 rounded-xl text-center font-medium flex items-center justify-center space-x-2 md:space-x-3 minimal-shadow text-sm md:text-base">
-                                <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-                                </svg>
-                                <span>Скачать проект</span>
-                            </a>
-                            
-                            <a href="https://bymakhambet.github.io/aksu_pano/" target="_blank"
-                               class="gentle-hover btn-3d py-3 md:py-4 px-4 md:px-8 rounded-xl text-center font-medium flex items-center justify-center space-x-2 md:space-x-3 minimal-shadow text-sm md:text-base">
-                                <svg class="w-4 h-4 md:w-5 md:h-5" fill="#ffffff" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                                <span style="color: #ffffff !important;">3D тур</span>
-                            </a>
-                            
-                            <a href="https://bymakhambet.github.io/aksu_img/" target="_blank" 
-                               class="gentle-hover bg-white border-2 border-subtle text-primary py-3 md:py-4 px-4 md:px-8 rounded-xl text-center font-medium flex items-center justify-center space-x-2 md:space-x-3 minimal-shadow text-sm md:text-base">
-                                <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                                </svg>
-                                <span>Фотогалерея</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+
+                    <span class="badge-new">2021 год постройки</span>
+
+                    <h1 class="text-2xl md:text-3xl font-light text-primary mb-3">
+                        Коммерческое помещение 2000 м²
+                    </h1>
+                    <p class="text-base md:text-lg text-secondary font-light mb-8">
+                        Первая линия • Open Space • Собственная парковка
+                    </p>
+
+                    <a
+                        href="https://wa.me/77007666050?text=Здравствуйте!%20Интересует%20помещение%202000%20м²"
+                        target="_blank"
+                        class="gentle-hover w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-xl text-center font-medium flex items-center justify-center space-x-3 minimal-shadow mb-8 text-base md:text-lg"
+                    >
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.982-3.741-.214-.361a9.869 9.869 0 01-1.378-5.031 9.87 9.87 0 0110.07-9.743 9.87 9.87 0 019.743 10.07 9.87 9.87 0 01-9.743 9.743z"/>
+                        </svg>
+                        <span>Забронировать просмотр</span>
+                    </a>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
                         <div class="text-center p-5 md:p-6 bg-gray-50 rounded-2xl">
                             <div class="text-3xl mb-3 opacity-60">
                                 <svg class="w-7 h-7 md:w-8 md:h-8 mx-auto text-accent-color opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,19 +180,20 @@
                             <p class="text-sm text-secondary mb-2 font-light">Общая площадь</p>
                             <p class="text-xl md:text-2xl font-light text-primary">2000 м²</p>
                         </div>
-                        
+
                         <div class="text-center p-5 md:p-6 bg-gray-50 rounded-2xl">
                             <div class="text-3xl mb-3 opacity-60">
                                 <svg class="w-7 h-7 md:w-8 md:h-8 mx-auto text-accent-color opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
                             <p class="text-sm text-secondary mb-2 font-light">Местоположение</p>
                             <p class="text-xl md:text-2xl font-light text-primary">
-                                г. Шымкент,<br>ул. Акжиек, 3/5
+                                Шымкент,<br>ул. Акжиек, 3/5
                             </p>
                         </div>
+
                         <div class="text-center p-5 md:p-6 bg-gray-50 rounded-2xl">
                             <div class="text-3xl mb-3 opacity-60">
                                 <svg class="w-7 h-7 md:w-8 md:h-8 mx-auto text-accent-color opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -204,137 +204,179 @@
                             <p class="text-xl md:text-2xl font-light accent-color">Договорная</p>
                         </div>
                     </div>
-                    
-                    <div class="mb-12">
-                        <h2 class="text-xl font-light text-primary mb-6">Дизайн интерьера</h2>
-                        
-                        <div class="grid grid-cols-2 gap-3 md:gap-4">
-                            
-                            <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112373/4_tskywj.png" data-lightbox="gallery" data-title="Дизайн интерьера 1" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow">
-                                <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112373/4_tskywj.png" 
-                                     alt="Дизайн интерьера 1" 
-                                     class="w-full h-full object-cover">
-                            </a>
-                            <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112378/7_fib467.png" data-lightbox="gallery" data-title="Дизайн интерьера 2" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow">
-                                <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112378/7_fib467.png" 
-                                     alt="Дизайн интерьера 2" 
-                                     class="w-full h-full object-cover">
-                            </a>
-                            <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761135024/Generated_Image_October_17_2025_-_2_42PM_rrx01x.png" data-lightbox="gallery" data-title="Дизайн интерьера 3" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow">
-                                <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761135024/Generated_Image_October_17_2025_-_2_42PM_rrx01x.png" 
-                                     alt="Дизайн интерьера 3" 
-                                     class="w-full h-full object-cover">
-                            </a>
-                            <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112376/5_z7ozba.png" data-lightbox="gallery" data-title="Дизайн интерьера 4" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow">
-                                <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112376/5_z7ozba.png" 
-                                     alt="Дизайн интерьера 4" 
-                                     class="w-full h-full object-cover">
-                            </a>
-                            <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761202937/Generated_Image_October_17_2025_-_4_20PM_dqvnxz.png" data-lightbox="gallery" data-title="Дизайн интерьера 5" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow">
-                                <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761202937/Generated_Image_October_17_2025_-_4_20PM_dqvnxz.png" 
-                                     alt="Дизайн интерьера 5" 
-                                     class="w-full h-full object-cover">
-                            </a>
-                             <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112378/1_wny3bj.png" data-lightbox="gallery" data-title="Дизайн интерьера 6" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow">
-                                <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112378/1_wny3bj.png" 
-                                     alt="Дизайн интерьера 6" 
-                                     class="w-full h-full object-cover">
-                            </a>
-                             <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761197363/7_hgej8f.png" data-lightbox="gallery" data-title="Дизайн интерьера 7" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow">
-                                <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761197363/7_hgej8f.png" 
-                                     alt="Дизайн интерьера 7" 
-                                     class="w-full h-full object-cover">
-                            </a>
-                             <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761197365/8_ndcvem.png" data-lightbox="gallery" data-title="Дизайн интерьера 8" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow">
-                                <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761197365/8_ndcvem.png" 
-                                     alt="Дизайн интерьера 8" 
-                                     class="w-full h-full object-cover">
-                            </a>
-                            </div>
-                    </div>
-
-                    <div class="mb-12">
-                        <h2 class="text-xl font-light text-primary mb-6">Описание</h2>
-                        <div class="prose prose-gray max-w-none">
-                            <p class="text-base text-secondary leading-relaxed font-light mb-6">
-                                Сдаётся коммерческое помещение — 2000 м², первая линия, 2021 год.
-                            </p>
-                            <p class="text-base text-secondary leading-relaxed font-light mb-6">
-                                Идеальное состояние, физический износ 0%. Формат open space, высокие потолки, панорамные витрины, собственная парковка.
-                            </p>
-                            
-                            <h3 class="text-lg font-light text-primary mb-4">Преимущества:</h3>
-                            <ul class="description-list">
-                                <li>
-                                    Первая линия — высокий трафик и максимальная видимость
-                                </li>
-                                <li>
-                                    Грузовой лифт — удобно для поставок и склада
-                                </li>
-                                <li>
-                                    Холодильные камеры — готовое решение для продуктового сегмента
-                                </li>
-                                <li>
-                                    Панорамные окна — фасад-витрина
-                                </li>
-                                <li>
-                                    Open space — гибкое зонирование под любой бизнес
-                                </li>
-                            </ul>
-
-                            <h3 class="text-lg font-light text-primary mb-4">Подойдёт для:</h3>
-                            <ul class="description-list">
-                                <li>Супермаркета</li>
-                                <li>Ресторана</li>
-                                <li>Фитнес-клуба</li>
-                                <li>Шоу-рума</li>
-                                <li>Медклиники</li>
-                            </ul>
-                            
-                            </div>
-                    </div>
-                    </div>
+                </div>
             </div>
-            
-            <div class="bg-white rounded-3xl minimal-shadow overflow-hidden mb-12">
-                <div class="p-6 md:p-12">
-                    <h2 class="text-xl font-light text-primary mb-6">Мы на карте</h2>
-                    <div class="w-full h-80 md:h-96 rounded-2xl overflow-hidden minimal-shadow map-container">
-                        
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d390.6059413399854!2d69.56666462375544!3d42.33264876109284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a91bf34975e61f%3A0xdaf8f50afe14d0b8!2zOEhKOCtYTUYsINCo0YvQvNC60LXQvdGC!5e0!3m2!1sru!2skz!4v1761203642946!5m2!1sru!2skz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        
+
+            <div class="bg-white rounded-3xl minimal-shadow overflow-hidden mb-8 p-6 md:p-12">
+                <h2 class="text-xl md:text-2xl font-light text-primary mb-8 text-center">Почему это выгодно?</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-primary mb-1">Первая линия</h3>
+                            <p class="text-sm text-secondary font-light">Высокий трафик и максимальная видимость</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-primary mb-1">Грузовой лифт</h3>
+                            <p class="text-sm text-secondary font-light">Удобно для поставок и склада</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-primary mb-1">Холодильные камеры</h3>
+                            <p class="text-sm text-secondary font-light">Готовое решение для продуктового сегмента</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-primary mb-1">Open Space</h3>
+                            <p class="text-sm text-secondary font-light">Гибкое зонирование под любой бизнес</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-white rounded-3xl minimal-shadow p-8 md:p-10">
-                <div class="text-center mb-8">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden minimal-shadow">
-                        
-                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761134570/e9fcd79c-d3c4-4d3c-bfa9-53fa9010028f_czh7fe.png" 
-                             alt="Махамбет" 
-                             class="w-full h-full object-cover">
-                    
+
+            <div class="bg-white rounded-3xl minimal-shadow overflow-hidden mb-8 p-6 md:p-12">
+                <h2 class="text-xl font-light text-primary mb-6">О помещении</h2>
+                <div class="prose prose-gray max-w-none">
+                    <p class="text-base text-secondary leading-relaxed font-light mb-6">
+                        Сдаётся коммерческое помещение — 2000 м², первая линия, 2021 год.
+                    </p>
+                    <p class="text-base text-secondary leading-relaxed font-light mb-6">
+                        Идеальное состояние, физический износ 0%. Формат open space, высокие потолки, панорамные витрины, собственная парковка.
+                    </p>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
+                        <p class="text-sm text-blue-800 font-light">
+                            <strong>Подойдёт для:</strong> супермаркета, ресторана, фитнес-клуба, шоу-рума, медклиники
+                        </p>
                     </div>
-                    <h2 class="text-2xl font-light text-primary mb-2">Махамбет</h2>
-                    <p class="text-base text-secondary font-light">Цифровой маркетолог</p>
                 </div>
-                
-                <div class="max-w-sm mx-auto">
-                    <a href="https://wa.me/77007666050" target="_blank" 
-                       class="gentle-hover w-full bg-green-50 border-2 border-green-200 text-green-700 py-4 px-6 rounded-xl text-center font-medium flex items-center justify-center space-x-3 minimal-shadow mb-6">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.982-3.741-.214-.361a9.869 9.869 0 01-1.378-5.031 9.87 9.87 0 0110.07-9.743 9.87 9.87 0 019.743 10.07 9.87 9.87 0 01-9.743 9.743z"/>
+            </div>
+
+            <div class="bg-white rounded-3xl minimal-shadow overflow-hidden mb-8 p-6 md:p-12">
+                <h2 class="text-xl font-light text-primary mb-6">Дизайн интерьера</h2>
+
+                <div class="grid grid-cols-2 gap-3 md:gap-4 mb-8">
+                    <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112373/4_tskywj.png" data-lightbox="gallery" data-title="Дизайн интерьера 1" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow h-40 md:h-48">
+                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112373/4_tskywj.png" alt="Дизайн интерьера 1" class="w-full h-full object-cover">
+                    </a>
+                    <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112378/7_fib467.png" data-lightbox="gallery" data-title="Дизайн интерьера 2" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow h-40 md:h-48">
+                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112378/7_fib467.png" alt="Дизайн интерьера 2" class="w-full h-full object-cover">
+                    </a>
+                    <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761135024/Generated_Image_October_17_2025_-_2_42PM_rrx01x.png" data-lightbox="gallery" data-title="Дизайн интерьера 3" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow h-40 md:h-48">
+                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761135024/Generated_Image_October_17_2025_-_2_42PM_rrx01x.png" alt="Дизайн интерьера 3" class="w-full h-full object-cover">
+                    </a>
+                    <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112376/5_z7ozba.png" data-lightbox="gallery" data-title="Дизайн интерьера 4" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow h-40 md:h-48">
+                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112376/5_z7ozba.png" alt="Дизайн интерьера 4" class="w-full h-full object-cover">
+                    </a>
+                    <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761202937/Generated_Image_October_17_2025_-_4_20PM_dqvnxz.png" data-lightbox="gallery" data-title="Дизайн интерьера 5" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow h-40 md:h-48">
+                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761202937/Generated_Image_October_17_2025_-_4_20PM_dqvnxz.png" alt="Дизайн интерьера 5" class="w-full h-full object-cover">
+                    </a>
+                    <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112378/1_wny3bj.png" data-lightbox="gallery" data-title="Дизайн интерьера 6" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow h-40 md:h-48">
+                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761112378/1_wny3bj.png" alt="Дизайн интерьера 6" class="w-full h-full object-cover">
+                    </a>
+                    <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761197363/7_hgej8f.png" data-lightbox="gallery" data-title="Дизайн интерьера 7" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow h-40 md:h-48">
+                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761197363/7_hgej8f.png" alt="Дизайн интерьера 7" class="w-full h-full object-cover">
+                    </a>
+                    <a href="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761197365/8_ndcvem.png" data-lightbox="gallery" data-title="Дизайн интерьера 8" class="gallery-image-wrapper gentle-hover rounded-xl minimal-shadow h-40 md:h-48">
+                        <img src="https://res.cloudinary.com/dxkuidd6d/image/upload/v1761197365/8_ndcvem.png" alt="Дизайн интерьера 8" class="w-full h-full object-cover">
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                    <a
+                        href="project.pdf"
+                        target="_blank"
+                        download
+                        class="gentle-hover bg-white border-2 border-subtle text-primary py-3 md:py-4 px-4 md:px-8 rounded-xl text-center font-medium flex items-center justify-center space-x-2 md:space-x-3 minimal-shadow text-sm md:text-base"
+                    >
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                         </svg>
-                        <span>Написать в WhatsApp</span>
+                        <span>Скачать проект</span>
+                    </a>
+
+                    <a
+                        href="https://bymakhambet.github.io/aksu_pano/"
+                        target="_blank"
+                        class="gentle-hover btn-3d py-3 md:py-4 px-4 md:px-8 rounded-xl text-center font-medium flex items-center justify-center space-x-2 md:space-x-3 minimal-shadow text-sm md:text-base"
+                    >
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="#ffffff" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span style="color: #ffffff !important;">3D тур</span>
+                    </a>
+
+                    <a
+                        href="https://bymakhambet.github.io/aksu_img/"
+                        target="_blank"
+                        class="gentle-hover bg-white border-2 border-subtle text-primary py-3 md:py-4 px-4 md:px-8 rounded-xl text-center font-medium flex items-center justify-center space-x-2 md:space-x-3 minimal-shadow text-sm md:text-base"
+                    >
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <span>Фотогалерея</span>
                     </a>
                 </div>
             </div>
-            
+
+            <div class="bg-white rounded-3xl minimal-shadow overflow-hidden mb-8">
+                <div class="p-6 md:p-12">
+                    <h2 class="text-xl font-light text-primary mb-6">Локация</h2>
+                    <div class="w-full h-80 md:h-96 rounded-2xl overflow-hidden minimal-shadow map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d390.6059413399854!2d69.56666462375544!3d42.33264876109284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a91bf34975e61f%3A0xdaf8f50afe14d0b8!2zOEhKOCtYTUYsINCo0YvQvNC60LXQvdGC!5e0!3m2!1sru!2skz!4v1761203642946!5m2!1sru!2skz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-    
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'disableScrolling': true,
+            'fadeDuration': 300,
+            'imageFadeDuration': 300
+        })
+    </script>
+
 </body>
 </html>
